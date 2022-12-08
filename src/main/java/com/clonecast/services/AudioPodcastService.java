@@ -7,7 +7,7 @@ import com.clonecast.models.AudioPodcast;
 
 public interface AudioPodcastService {
     
-    AudioPodcast createAudio(RegisterAudioDto registerAudioDto, String urlUpload, String linkStreamAudio);
+    AudioPodcast createAudio(RegisterAudioDto registerAudioDto);
 
     AudioPodcast getAudioPodcast(UUID id);
 

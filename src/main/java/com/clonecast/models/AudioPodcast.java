@@ -17,7 +17,6 @@ public class AudioPodcast {
     private String name;
     private String author;
     private Double ratio = 0.0;
-    private String urlOriginAudio;
     private String linkStreamAudio;
     
     public AudioPodcast() {
@@ -53,14 +52,6 @@ public class AudioPodcast {
 
     public void setRatio(Double ratio) {
         this.ratio = ratio;
-    }
-
-    public String getUrlOriginAudio() {
-        return urlOriginAudio;
-    }
-
-    public void setUrlOriginAudio(String urlOriginAudio) {
-        this.urlOriginAudio = urlOriginAudio;
     }
 
     public String getLinkStreamAudio() {

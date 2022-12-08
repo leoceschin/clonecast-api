@@ -4,7 +4,7 @@ public class RegisterAudioDto {
     
     private String name;
     private String author;
-    private String urlOriginAudio;
+    private String urlStreamAudio;
     public RegisterAudioDto() {
     }
     public String getName() {
@@ -19,11 +19,11 @@ public class RegisterAudioDto {
     public void setAuthor(String author) {
         this.author = author;
     }
-    public String getUrlOriginAudio() {
-        return urlOriginAudio;
+    public String getUrlStreamAudio() {
+        return urlStreamAudio;
     }
-    public void setUrlOriginAudio(String urlOriginAudio) {
-        this.urlOriginAudio = urlOriginAudio;
+    public void setUrlStreamAudio(String urlStreamAudio) {
+        this.urlStreamAudio = urlStreamAudio;
     }
     
     

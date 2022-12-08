@@ -1,5 +1,6 @@
 package com.clonecast.services.impl;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,14 +17,12 @@ public class AudioPodcastServiceImpl implements AudioPodcastService{
     private AudioPodcastRepository audioPodcastRepository;
 
     @Override
-    public AudioPodcast createAudio(RegisterAudioDto registerAudioDto, String urlUpload, String linkStreamAudio) {
+    public AudioPodcast createAudio(RegisterAudioDto registerAudioDto) {
         AudioPodcast audioPodcast = new AudioPodcast();
 
         audioPodcast.setName(registerAudioDto.getName());
         audioPodcast.setAuthor(registerAudioDto.getAuthor());
-        audioPodcast.setUrlOriginAudio(urlUpload);
-
-        audioPodcast.setLinkStreamAudio(linkStreamAudio);
+        audioPodcast.setLinkStreamAudio(registerAudioDto.getUrlStreamAudio());
 
         return audioPodcastRepository.save(audioPodcast);
 
@@ -34,4 +33,18 @@ public class AudioPodcastServiceImpl implements AudioPodcastService{
         AudioPodcast audioPodcast = audioPodcastRepository.findById(id).get();
         return audioPodcast;
     }
+
+    public List<AudioPodcast> getAllAudioPodcats(){
+        return audioPodcastRepository.findAll();
+    }
+
+    public AudioPodcast setRatioPodcast(UUID id, Double ratio) {
+        AudioPodcast audioPodcast = audioPodcastRepository.findById(id).get();
+        return audioPodcast;
+    }
+
+    public void deleteAudioById(UUID id){
+        audioPodcastRepository.deleteById(id);
+    }
+
 }
